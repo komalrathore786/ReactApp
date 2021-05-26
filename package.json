@@ -14,7 +14,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage --coverageDirectory=output/coverage/jest --watchAll=false",
+    "coverage": "react-scripts test --env=jsdom --watchAll=false --coverage --coverage-reporters=lcov",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
