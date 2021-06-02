@@ -7,9 +7,10 @@ sudo: required
 # series of steps ran before the test
 before_install:
   - npm install
+  - npm run build
 
 # triggering travis ci to run this script to have the test
 script:
-  - npm run build
+ # - npm run build
   - npm run test
   - npm start
