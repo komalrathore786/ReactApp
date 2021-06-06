@@ -17,13 +17,13 @@ services:
 
 before_install:
   - git config --global user.email "anurathore350@gmail.com"
-  #- docker build -t webapp -f Dockerfile .
+  - docker build -t webapp -f Dockerfile .
 
 # script:
 #   - docker run -e CI=true webapp npm run test
 
-# after_success:
-#   - docker build -t webapp .
-#   - echo "$DOCKER_PASSWORD" | docker login docker.io -u "$DOCKER_ID" -p "$DOCKER_PASSWORD"
-#   - docker tag webapp 111222333444anu/webapp
-#   - docker push docker.io/111222333444anu/webapp:latest
+after_success:
+  - docker build -t webapp .
+  - echo "$DOCKER_PASSWORD" | docker login docker.io -u "$DOCKER_ID" -p "$DOCKER_PASSWORD"
+  - docker tag webapp 111222333444anu/webapp
+  - docker push docker.io/111222333444anu/webapp:latest
