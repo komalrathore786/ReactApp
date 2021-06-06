@@ -20,10 +20,9 @@ after_success:
   - docker tag webapp 111222333444anu/webapp
   - docker push docker.io/111222333444anu/webapp:latest
   
-notifications:  
-  email:  
-    recipients:  
-     - komal.rathore@harbingergroup.com  
-    on_success: always  
-    on_failure: always
- 
+ notifications:
+  email:
+    recipients:
+      - komal.rathore@harbingergroup.com
+    on_success: always # default: change
+    on_failure: always # default: always
