@@ -19,4 +19,11 @@ after_success:
   - echo "$DOCKER_PASSWORD" | docker login docker.io -u "$DOCKER_ID" -p "$DOCKER_PASSWORD"
   - docker tag webapp 111222333444anu/webapp
   - docker push docker.io/111222333444anu/reactapp-222:latest
+  
+  notifications:  
+  email:  
+    recipients:  
+    - komal.rathore@harbingergroup.com  
+    on_success: always  
+    on_failure: always
  
