@@ -9,7 +9,8 @@ services:
   - docker
 
 before_install:
-  - docker build -t webapp -f Dockerfile .
+  - git config --global user.email "komal.rathore@harbingergroup.com"
+  #- docker build -t webapp -f Dockerfile .
 
 # script:
 #   - docker run -e CI=true webapp npm run test
