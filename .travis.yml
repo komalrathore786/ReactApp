@@ -16,6 +16,6 @@ before_install:
 
 after_success:
   - docker build -t webapp .
-  - echo "Rishudev67890#" | docker login -u "111222333444anu" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push webapp
  
