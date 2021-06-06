@@ -23,7 +23,7 @@ after_success:
 notifications:  
   email:  
     recipients:  
-      - komal.rathore@harbingergroup.com  
+     - komal.rathore@harbingergroup.com  
     on_success: always  
     on_failure: always
  
