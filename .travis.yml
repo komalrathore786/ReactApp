@@ -5,6 +5,13 @@ node_js:
 # required super user access
 sudo: required
 
+notifications:
+  email:
+    on_success: always # only if status change from fail to success
+    on_failure: always # if there is a fail
+    recipients:
+      - komal.rathore@harbingergroup.com
+
 services:
   - docker
 
@@ -20,10 +27,3 @@ before_install:
 #   - echo "$DOCKER_PASSWORD" | docker login docker.io -u "$DOCKER_ID" -p "$DOCKER_PASSWORD"
 #   - docker tag webapp 111222333444anu/webapp
 #   - docker push docker.io/111222333444anu/webapp:latest
-  
-notifications:
-  email:
-    recipients:
-      - komal.rathore@harbingergroup.com
-    on_success: always # default: change
-    on_failure: always # default: always
