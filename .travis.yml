@@ -11,8 +11,8 @@ services:
 before_install:
   - docker build -t webapp -f Dockerfile .
 
-script:
-  - docker run -e CI=true webapp npm run test
+# script:
+#   - docker run -e CI=true webapp npm run test
 
 after_success:
   - docker build -t webapp .
