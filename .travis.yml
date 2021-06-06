@@ -9,7 +9,7 @@ services:
   - docker
 
 before_install:
-  - git config --global user.email "komal.rathore@harbingergroup.com"
+  - git config --global user.email "anurathore350@gmail.com"
   #- docker build -t webapp -f Dockerfile .
 
 # script:
