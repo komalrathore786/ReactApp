@@ -5,12 +5,22 @@ node_js:
 # required super user access
 sudo: required
 
+services: 
+  - docker
 
 # series of steps ran before the test
 before_install:
-  - npm install
+  - docker build -t webapp -f Dockerfile .
+ # - npm install
 
 # triggering travis ci to run this script to have the test
 script:
-  - npm run build
-  - npm run test
+ - docker run -e CI=true webapp npm run test
+ # - npm run build
+ # - npm run test
+ 
+ after_success:
+  - docker build -t webapp .
+  - echo "$DOCKER_PASSWORD" | docker login -u "111222333444anu" --password-Rishudev67890#
+  - docker push webapp
+ 
