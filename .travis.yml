@@ -17,5 +17,5 @@ before_install:
 after_success:
   - docker build -t webapp .
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" -p "$DOCKER_PASSWORD"
-  - docker push webapp
+  - docker push 111222333444anu/reactapp-222:webapp
  
