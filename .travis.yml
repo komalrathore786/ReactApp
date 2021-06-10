@@ -1,6 +1,10 @@
 language: node_js
 node_js:
   - 12
+
+env:
+  - TEST_SUITE=units
+  - TEST_SUITE=integration
   
 # required super user access
 sudo: required
@@ -19,8 +23,7 @@ before_install:
   - git config --global user.email "anurathore350@gmail.com"
   - docker build -t webapp -f Dockerfile .
 
-# script:
-#   - docker run -e CI=true webapp npm run test
+script: "bundle exec rake test:$TEST_SUITE"
 
 after_success:
   - docker build -t webapp .
