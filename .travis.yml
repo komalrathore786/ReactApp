@@ -23,7 +23,7 @@ before_install:
   - git config --global user.email "anurathore350@gmail.com"
   - docker build -t webapp -f Dockerfile .
 
-script: "bundle exec rake test:$TEST_SUITE"
+script: "npm run test:$TEST_SUITE"
 
 after_success:
   - docker build -t webapp .
