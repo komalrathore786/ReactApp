@@ -15,11 +15,7 @@ provider "aws" {
 module "aws_static_site" {
     source  = "dvargas92495/static-site/aws"
     version = "1.2.0"
-
-    secret = "secret-key"
-    tags = {
-        Application = "static-site-demo"
-    }
+    secret = "secret-key"   
 }
 
 provider "github" {
